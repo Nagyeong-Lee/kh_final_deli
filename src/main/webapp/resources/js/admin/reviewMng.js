@@ -30,12 +30,6 @@ $(document).ready(function() {
 } );
 
 
-
-
-
-
-
-
 trClickEvent();
 //페이지 버튼을 눌렀을때 다시 script 돌아가게
 $("#myTable_paginate").click(function () {

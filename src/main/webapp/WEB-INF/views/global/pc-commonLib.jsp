@@ -1,5 +1,5 @@
-<link rel="icon" href="/resources/favicon.ico" type="image/x-icon">
-<link href="/resources/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="icon" href="/resources/img/favicon.ico" type="image/x-icon">
+<link href="/resources/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
 <!-- sweetAlert -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

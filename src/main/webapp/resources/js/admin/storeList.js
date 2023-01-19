@@ -1,4 +1,3 @@
-
 let lang_kor = {
     "decimal" : "",
     "emptyTable" : "데이터가 없습니다.",
