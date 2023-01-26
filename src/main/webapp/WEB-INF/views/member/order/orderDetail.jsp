@@ -42,7 +42,6 @@
                 <c:forEach var="menuList" items="${basketMenu}">
                     <div class="menuBox">
                         <div id="menu_name">${menuList.menu.menu_name} ${menuList.count}개</div>
-                            <%--                        <c:forEach var="optionList" items="${menuList.optionList}">--%>
                         <c:choose>
                             <c:when test="${not empty menuList.optionList}">
                                 <c:choose>
@@ -65,7 +64,6 @@
                             </c:when>
                             <c:otherwise></c:otherwise>
                         </c:choose>
-                            <%--                        </c:forEach>--%>
                         <div><fmt:formatNumber value="${menuList.price}" pattern="#,###"/>원</div>
                     </div>
                 </c:forEach>
@@ -151,7 +149,6 @@
             </c:when>
             </c:choose>
             <div class="btn">
-                <%--메인으로?--%>
                 <button id="complete">확인</button>
             </div>
 

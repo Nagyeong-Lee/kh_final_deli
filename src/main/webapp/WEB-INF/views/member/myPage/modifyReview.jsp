@@ -64,7 +64,6 @@
                 <div class="imgBox fileBtnBox">
                     <input type="hidden" name="rev_sysname" id="rev_sysmname">
                     <label id="btnCustom"> <i class="fa-solid fa-camera"></i>  사진 수정 <span class="imgMsg">(최대 4개)</span>
-                        <%--                    <label id="btnCustom"> <i class="fa-solid fa-camera"></i> 사진 추가--%>
                         <input type="file" id="revImgBtn" name="files" accept=".png,.jpg,.jpeg,.gif"
                                multiple>
                     </label>
@@ -82,9 +81,7 @@
                                 request.setAttribute("review_img_list", gson.fromJson(reviewSysName, type));
                             %>
                             <c:forEach var="revImg" items="${review_img_list}">
-<%--                                <div class="review_img_div" class="preimg_img" style="display: inline-block; padding: 2px; margin-top:5px; width: 157px; height: 157px;'">--%>
                                 <div class="review_img_div">
-<%--                                    <img src="/resources/img/review/${revImg}" style="width: 100%; height: 100%; object-fit: cover; position: relative; top:-16px;">--%>
                                     <img src="/resources/img/review/${revImg}">
                                     <i class="fa-solid fa-x del_img_btn"></i>
                                     <input type="hidden" class="img_name" value="${revImg}">

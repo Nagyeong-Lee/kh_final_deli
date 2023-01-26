@@ -31,7 +31,6 @@
     </div>
     <div id="star"><span class="storeEtc"> <i class="fa-solid fa-star"></i>${reviews.rev_star}</span><span style="color: #888888">(${storeReviewAvg})</span> | <a onclick="loadCode3();" style="cursor: pointer;">리뷰<span style="color: #888888">(${storeReviewCount})</span></a>
     </div>
-    <%--    <div id="reviewCount"> | 리뷰(${storeReviewCount})</div>--%>
     <div id="storeInfo">${storeInfoDTO.store_intro}</div>
     <div class="deliveryInfo" style="text-align: left;">
         <div>최소주문금액 : <fmt:formatNumber value="${storeInfoDTO.store_min_price}" pattern="#,###"/>원</div>
