@@ -84,35 +84,24 @@
 <img width="70%" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbPndOO%2FbtrWDPA9rhO%2FaAkO081mKEeQA1dDY2gT1k%2Fimg.jpg">
 
 ## 3. 담당 기능 소개
-### (비회원) 사업자 회원가입
-<img width="70%" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fk1dFv%2FbtrWQ5kj3Id%2FtfWEKTUnkJghF8b9c8BaP1%2Fimg.jpg"><br>
-이메일 중복방지, 이메일 인증, 전화번호 인증
+### 식당 상세 페이지 (메뉴/정보/리뷰)
+- 식당 메뉴 페이지
+<img width="70%" src="![apsb](https://user-images.githubusercontent.com/114720525/215962153-33128f1b-fd5b-445c-a11b-428d66864484.png)
+"><br>
 
-### (일반 유저) 메뉴 상세 - 옵션 선택, 장바구니 담기
+### 주문 상세 페이지
 <img width="30%" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb9qtrd%2FbtrWQ4yUfcn%2F29F978UtYwrqdtAqQEmFnK%2Fimg.jpg"><br>
 [장바구니 담는 Method](https://github.com/Jihoon-An/KH_final_deli.project/blob/c1536e3f52e100cf3924c2d5efc31ec215106bcd/src/main/java/kh/deli/domain/member/store/service/StoreBasketService.java#L31)
 
-### (사업자 유저) 주문관리, 알림
+### (운영자) 리뷰 관리 기능
 <img width="70%" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlF1gv%2FbtrWQt62l2R%2Fn99IMkRZkftjuXna3YVolk%2Fimg.jpg"><br>
 1. 매장이 여러개 있을 경우 맨 위의 Select에서 매장을 선택할 수 있습니다. 
 2. 해당 주문에 체크를 하고 위에서 상태를 선택한 후 '선택항목 상태 바꾸기' 버튼을 클릭하면 상태가 변경되고 사용자가 접속해 있는 경우 알림이 발생합니다.
 3. '링크 보내기' 버튼을 클릭하고 전화번호를 입력하면, 해당 주문의 정보를 담은 페이지의 링크를 **Redis**를 거쳐 랜덤한 링크로 바꾸고, 입력한 전화번호에 메세지로 링크를 전송합니다. 
 
-### (Admin) 쿠폰관리
+### (사업자) 식당 수정 및 삭제 페이지
 <img width="70%" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fs8e8i%2FbtrWQL0FIAr%2F6DwrMlhbI802KBR5ei9rT0%2Fimg.jpg"><br>
 <img width="70%" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbedQHf%2FbtrWTKMIDaV%2FBDVVgi5lBidUqUpvkBZcEK%2Fimg.jpg"><br>
 
-
-## 4. 기능 구현 지원
-### (일반 유저) 식당 리스트 - 경도 위도를 기반으로 일정 거리 내의 식당 출력
-<img width="50%" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FeDz99y%2FbtrWQrhfyyg%2Fim2CYsZzwbwPkWrKJ4eXw0%2Fimg.jpg"><br>
-<img width="50%" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb8RqYI%2FbtrWRWtlSw8%2FB2cJazqWVZLk68ze40Iji0%2Fimg.jpg">
-
-### (일반 유저) 리뷰 수정 - 최대 개수가 정해진 다수의 이미지 수정
-<img width="30%" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fnav4K%2FbtrWQ304Mps%2FaeAOYETFujYVpD8KNW0zx0%2Fimg.jpg"><br>
-[아래 소스 링크](https://github.com/Jihoon-An/KH_final_deli.project/blob/c1536e3f52e100cf3924c2d5efc31ec215106bcd/src/main/webapp/resources/js/member/myPage/modifyReview.js#L124)<br>
-<img width="60%" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbZV0RR%2FbtrWQqvQ4KT%2FDKeorZDLtj7xiL7HXbAkCk%2Fimg.jpg"><br>
-[아래 소스 링크](https://github.com/Jihoon-An/KH_final_deli.project/blob/c1536e3f52e100cf3924c2d5efc31ec215106bcd/src/main/webapp/resources/js/member/myPage/modifyReview.js#L124)<br>
-<img width="60%" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FpILFx%2FbtrWQ4Z0eXL%2FY5f0Hmw6MmPHaT9ccMHqh0%2Fimg.jpg"><br>
 
 
