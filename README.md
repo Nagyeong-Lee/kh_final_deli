@@ -86,12 +86,12 @@
 ## 3. 담당 기능 소개
 ### 식당 상세 페이지 (메뉴/정보/리뷰)
 - 식당 메뉴 페이지
-<img width="70%" src="![apsb](https://user-images.githubusercontent.com/114720525/215962153-33128f1b-fd5b-445c-a11b-428d66864484.png)
-"><br>
+<img width="30%" src="![apsb](https://user-images.githubusercontent.com/114720525/215965357-2d181acb-a7b4-4fdc-804a-d8430d7f3eed.png)"><br>
+
 
 ### 주문 상세 페이지
-<img width="30%" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb9qtrd%2FbtrWQ4yUfcn%2F29F978UtYwrqdtAqQEmFnK%2Fimg.jpg"><br>
-[장바구니 담는 Method](https://github.com/Jihoon-An/KH_final_deli.project/blob/c1536e3f52e100cf3924c2d5efc31ec215106bcd/src/main/java/kh/deli/domain/member/store/service/StoreBasketService.java#L31)
+<img width="30%" src="![apsb](https://user-images.githubusercontent.com/114720525/215964391-8ec8a330-6a49-413e-bdbf-f135a51ae48d.png)"><br>
+
 
 ### (운영자) 리뷰 관리 기능
 <img width="70%" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlF1gv%2FbtrWQt62l2R%2Fn99IMkRZkftjuXna3YVolk%2Fimg.jpg"><br>
