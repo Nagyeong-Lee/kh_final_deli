@@ -94,7 +94,9 @@
     <a href="/owner/order"><div class="nav_list d-flex flex-row">
       <div class="icon"><i class="fa-solid fa-shop"></i></div>
       <div class="title">주문관리</div></div></a>
-
+    <a href="/owner/community/list?page=1&PerPageNum=5"><div class="nav_list d-flex flex-row">
+      <div class="icon"><i class="fa-solid fa-shop"></i></div>
+      <div class="title">커뮤니티</div></div></a>
     <a href="/account/logout"><div class="logout"><i class="fa-solid fa-right-from-bracket"></i> logout</div></a>
 
   </nav>

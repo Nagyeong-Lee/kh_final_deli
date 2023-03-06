@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kh.deli.domain.owner.mapper.OwnerCommunityMapper">
+    <insert id="insert" parameterType="kh.deli.domain.owner.dto.BoardDTO">
+        insert into board values (
+        b_seq.nextval,
+        #{b_title},
+        #{b_writer},
+        #{b_contents},
+        sysdate,
+        #{b_category, jdbcType=VARCHAR},
+        0,
+        'Y',
+        #{b_parent_seq, jdbcType=NUMERIC},
+        #{b_upd_contents, jdbcType=VARCHAR},
+        #{b_upd_time, jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <select id="select" resultType="kh.deli.domain.owner.dto.BoardDTO">
+        SELECT *
+        FROM(SELECT ROWNUM rn, b.*
+            FROM (SELECT b_seq,b_title,b_writer,b_contents,b_write_time,b_count,b_upd_time,b_status
+            FROM board
+        where b_status='Y'
+            ORDER BY b_write_time desc) b)
+        WHERE rn BETWEEN #{getPageStart} AND #{pageStartToPerPageNum}
+    </select>
+
+    <update id="count">
+        update board
+        set b_count=b_count+1
+        where b_seq=#{b_seq}
+    </update>
+
+    <select id="detailBoard" resultType="kh.deli.domain.owner.dto.BoardDTO">
+        select
+        b_title,
+        b_seq,
+        b_write_time ,
+        b_count,
+        b_upd_time,
+        b_writer,
+        b_contents
+        from board
+        where b_seq=#{b_seq}
+    </select>
+
+    <delete id="delete">
+        update board
+        set b_status = 'N'
+        where b_seq=#{b_seq}
+    </delete>
+
+    <select id="getNickname" resultType="String">
+        select b_writer
+        from board
+        where b_seq=#{b_seq}
+    </select>
+
+    <update id="update">
+        update board
+        set b_title=#{b_title},
+        b_contents=#{b_contents},
+        b_upd_time=sysdate
+        where b_seq=#{b_seq}
+    </update>
+
+    <select id="countPost" resultType="Integer">
+        select count(*)
+        from board
+    </select>
+
+</mapper>
