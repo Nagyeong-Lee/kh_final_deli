@@ -26,19 +26,6 @@
        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
-    <script>
-            $(function () {
-                $(".summernote").summernote({
-                    height: 300,                 // 에디터 높이
-                    minHeight: null,             // 최소 높이
-                    maxHeight: null,             // 최대 높이
-                    focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
-                    lang: "ko-KR",					// 한글 설정
-                    placeholder: '글을 입력하세요.'	//placeholder 설정
-                });
-            });
-    </script>
-
     <style>
         .container {
             margin: auto;
@@ -70,6 +57,8 @@
             height:50%;
             width: 100%;
         }
+
+        .b_contents{border:1px solid black;}
     </style>
 
 </head>
@@ -93,7 +82,7 @@
             </c:if>
         </div>
         <div class="board_contents_div">
-            <textarea class="summernote" id="b_contents" name="b_contents">${detailBoard.b_contents}</textarea>
+            <div class="b_contents">${detailBoard.b_contents}</div>
         </div>
         <div id="b_comments" name="b_comments">댓글영역</div>
         <div class="btns">
@@ -114,6 +103,26 @@
         let completeUpdBtn = $("<button>수정완료</button>");
         completeUpdBtn.attr("id","completeUpdBtn");
         $(".btns").append(completeUpdBtn);
+
+        $(".b_contents").remove();
+
+        let editor = $("<textarea></textarea>");
+        editor.attr("class","summernote");
+        editor.attr("id","b_contents");
+        editor.attr("name","b_contents");
+
+        $("board_contents_div").append(editor);
+
+        $(".summernote").summernote({
+                     height: 300,                 // 에디터 높이
+                     minHeight: null,             // 최소 높이
+                     maxHeight: null,             // 최대 높이
+                     focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
+                     lang: "ko-KR",					// 한글 설정
+                     placeholder: '글을 입력하세요.'	//placeholder 설정
+         });
+
+         $("#b_contents").html(${detailBoard.b_contents});
     });
 
     $("#completeUpdBtn").on("click",function(){
