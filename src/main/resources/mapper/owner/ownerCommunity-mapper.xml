@@ -23,11 +23,11 @@
     <select id="select" resultType="kh.deli.domain.owner.dto.BoardDTO">
         SELECT *
         FROM(SELECT ROWNUM rn, b.*
-            FROM (SELECT b_seq,b_title,b_writer,b_contents,b_write_time,b_count,b_upd_time,b_status
+        FROM (SELECT b_seq,b_title,b_writer,b_contents,b_write_time,b_count,b_upd_time,b_status
             FROM board
-        where b_status='Y'
+            where b_status='Y'
             ORDER BY b_write_time desc) b)
-        WHERE rn BETWEEN #{getPageStart} AND #{pageStartToPerPageNum}
+        where rn between #{start} and #{end}
     </select>
 
     <update id="count">
@@ -73,5 +73,27 @@
         select count(*)
         from board
     </select>
+
+    <select id="selectByType" resultType="kh.deli.domain.owner.dto.BoardDTO">
+        select * from
+        (
+        SELECT ROWNUM rm, B.* FROM(
+        (select
+            b_seq,b_title,b_writer,b_contents,b_write_time,b_count,b_upd_time,b_status
+        FROM board
+        where b_status='Y'
+        <if test='search_type.equals("b_title")'>
+            and b_title like concat('%',#{keyword},'%')
+        </if>
+        <if test='search_type.equals("b_writer")'>
+            and b_writer like concat('%',#{keyword},'%')
+        </if>
+        <if test='search_type.equals("b_contents")'>
+            and b_contents like concat('%',#{keyword},'%')
+        </if>
+        order by b_write_time desc) B)
+        where rm between #{start} and #{end}
+    </select>
+
 
 </mapper>

@@ -56,9 +56,9 @@
         <div>작성자 : ${loginEmail}</div>
         <input type="hidden" value="${loginEmail}" id="b_writer" name="b_writer">
         <textarea class="summernote" id="b_contents" name="b_contents"></textarea>
-        <button id="submit" name="submit">작성하기</button>
-        <a href="/owner/community">
-            <button type="button">목록으로</button>
+        <input type="submit" id="submit" name="submit" value="작성하기"></input>
+        <a href="/owner/community/list?currentPage=1">
+            <input type="button" value="목록으로"></input>
         </a>
     </div>
 </form>

@@ -106,23 +106,22 @@
 
         $(".b_contents").remove();
 
-        let editor = $("<textarea></textarea>");
-        editor.attr("class","summernote");
+        let editor = $("<textarea>${detailBoard.b_contents}</textarea>");
+        editor.addClass("summernote");
         editor.attr("id","b_contents");
         editor.attr("name","b_contents");
 
-        $("board_contents_div").append(editor);
+        $(".board_contents_div").append(editor);
 
         $(".summernote").summernote({
-                     height: 300,                 // 에디터 높이
-                     minHeight: null,             // 최소 높이
-                     maxHeight: null,             // 최대 높이
-                     focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
-                     lang: "ko-KR",					// 한글 설정
-                     placeholder: '글을 입력하세요.'	//placeholder 설정
-         });
+                height: 300,                 // 에디터 높이
+                minHeight: null,             // 최소 높이
+                maxHeight: null,             // 최대 높이
+                focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
+                lang: "ko-KR",					// 한글 설정
+                placeholder: '글을 입력하세요.'	//placeholder 설정
+        });
 
-         $("#b_contents").html(${detailBoard.b_contents});
     });
 
     $("#completeUpdBtn").on("click",function(){
